@@ -5,7 +5,7 @@
 
 > ## Overview
 
-This app lets you explore aspects of different cities located all around the world. Just put in a valid name, and start exploring!
+This app lets you explore aspects of different cities located all around the U.S. Just put in a valid name, and start exploring!
 
 > ## Getting Started
 
@@ -27,6 +27,13 @@ Simply visit
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
 > ## Change Log
+
+- Name of feature: City name to get lat and long
+- Estimated ETA: 60 minutes
+- Start time: 10pm
+- Finish time: 11:14pm
+- Actual ETA: 75 mins
+
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
@@ -35,12 +42,3 @@ Simply visit
 
 - [Jonathan Rumsey](https://github.com/nojronatron) assisted with day-one wireframe!
 
-Name of feature: City name to get lat and long
-
-Estimate of time needed to complete: 60 minutes
-
-Start time: 10pm
-
-Finish time: _____
-
-Actual time needed to complete: _____
