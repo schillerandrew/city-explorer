@@ -31,7 +31,7 @@ Simply visit
 - Name of feature: City name to get lat and long
 - Estimated ETA: 60 minutes
 - Start time: 10pm
-- Finish time: 11:14pm
+- Finish time: 11:15pm
 - Actual ETA: 75 mins
 
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
