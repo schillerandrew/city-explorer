@@ -37,11 +37,13 @@ class App extends React.Component {
       weatherData: weatherDataFromAPI.data,
       reveal: true
     });
-    console.log(this.state.weatherData);
-    console.log(this.state.reveal);
+    // console.log(this.state.weatherData);
+    // console.log(this.state.reveal);
   };
 
   render() {
+    console.log(this.state.weatherData);
+    console.log(this.state.reveal);
     return (
       <>
         <Header />
