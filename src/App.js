@@ -30,10 +30,10 @@ class App extends React.Component {
     this.setState({
       cityData: dataFromAPI.data[0]
     });
-    let weatherURL = `${process.env.REACT_APP_SERVER}`
-    let weatherData = await axios.get();
+    let weatherURL = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
+    let weatherData = await axios.get(weatherURL);
     
-    console.log('cityData', this.state.cityData);
+    console.log(weatherData.data);
   }
 
   render() {

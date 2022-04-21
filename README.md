@@ -14,7 +14,9 @@ Simply visit
 
 > ## Architecture
 
-![data flow](lab6plan.png)
+![Lab 6 data flow](./img/lab6plan.png)
+
+![Lab 7 wireframe](./img/lab7.jpg)
 
 - ### core languages: HTML/CSS/JavaScript
 
