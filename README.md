@@ -18,6 +18,10 @@ Simply visit
 
 ![Lab 7 wireframe](./img/lab7.jpg)
 
+![Lab 8 data flow](./img/lab8plan.jpg)
+
+![Lab 9 data flow](./img/lab9plan.jpg)
+
 - ### core languages: HTML/CSS/JavaScript
 
 - ### library: [React Bootstrap](https://react-bootstrap.github.io/getting-started/introduction)
@@ -42,5 +46,6 @@ Simply visit
 
 > ## Credit and Collaborations
 
-- [Jonathan Rumsey](https://github.com/nojronatron) assisted with day-one wireframe!
-
+- [Jonathan Rumsey](https://github.com/nojronatron) assisted with the Lab 6 data flow
+- Abdulahi contributed to the Lab 6 data flow
+- Roger Reyes contributed to the Lab 9 data flow
