@@ -20,6 +20,8 @@ class Main extends React.Component {
         </Form>
         <CityRender
           cityData={this.props.cityData}
+          weatherData={this.props.weatherData}
+          reveal={this.props.reveal}
         />
       </main>
     )
