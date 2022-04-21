@@ -21,8 +21,8 @@ class App extends React.Component {
     e.preventDefault();
     this.setState({
       city: e.target.value
-    })
-  }
+    });
+  };
 
   handleExploreClick = async (e) => {
     e.preventDefault();
@@ -36,11 +36,10 @@ class App extends React.Component {
     this.setState({
       weatherData: weatherDataFromAPI.data,
       reveal: true
-    })
-
-    console.log(this.state.weatherData[0]);
+    });
+    console.log(this.state.weatherData);
     console.log(this.state.reveal);
-  }
+  };
 
   render() {
     return (
