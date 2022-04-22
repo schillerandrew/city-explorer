@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Weather from './Weather.js';
+import Movies from './Movies.js';
 
 class CityRender extends React.Component {
 
@@ -14,10 +15,10 @@ class CityRender extends React.Component {
           <Card.Body>
             <Card.Text><strong>latitude:</strong> {this.props.cityData.lat}</Card.Text>
             <Card.Text><strong>longitude:</strong> {this.props.cityData.lon}</Card.Text>
-            {this.props.reveal ? (
+            {this.props.weatherReveal ? (
               <Weather
                 weatherData={this.props.weatherData}
-                reveal={this.props.reveal}
+                weathearReveal={this.props.weatherReveal}
               />
             ) : null
             }
@@ -25,6 +26,13 @@ class CityRender extends React.Component {
               src={cityMap}
               alt={this.props.cityData.display_name}
             />
+            {this.props.moviesReveal ? (
+              <Movies
+                moviesData={this.props.moviesData}
+                moviesReveal={this.props.moviesReveal}
+              />
+            ) : null
+            }
           </Card.Body>
         </Card>
       </>
