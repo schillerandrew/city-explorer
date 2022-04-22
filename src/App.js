@@ -13,7 +13,9 @@ class App extends React.Component {
       cityData: {},
       // cityMap: ''
       weatherData: [],
-      reveal: false
+      moviesData: [],
+      weatherReveal: false,
+      moviesReveal: false
     };
   };
 
@@ -26,24 +28,39 @@ class App extends React.Component {
 
   handleExploreClick = async (e) => {
     e.preventDefault();
+
     let cityName = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
     let cityDataFromAPI = await axios.get(cityName);
     this.setState({
       cityData: cityDataFromAPI.data[0]
     });
+    this.handleWeather();
+    this.handleMovies();
+  }
+
+  handleWeather = async () => {
     let weatherURL = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
     let weatherDataFromAPI = await axios.get(weatherURL);
     this.setState({
       weatherData: weatherDataFromAPI.data,
-      reveal: true
+      weatherReveal: true
     });
-    // console.log(this.state.weatherData);
-    // console.log(this.state.reveal);
+  }
+
+  handleMovies = async () => {
+    let moviesURL = `${process.env.REACT_APP_SERVER}/movies?searchQuery=${this.state.city}`;
+    let moviesDataFromAPI = await axios.get(moviesURL);
+    this.setState({
+      moviesData: moviesDataFromAPI.data,
+      moviesReveal: true
+    });
   };
 
   render() {
     console.log(this.state.weatherData);
-    console.log(this.state.reveal);
+    console.log(this.state.weatherReveal);
+    console.log(this.state.moviesReveal);
+    console.log(this.state.moviesData);
     return (
       <>
         <Header />
@@ -53,7 +70,7 @@ class App extends React.Component {
           cityData={this.state.cityData}
           weatherData={this.state.weatherData}
           reveal={this.state.reveal}
-        />          
+        />
         <Footer />
       </>
     )
