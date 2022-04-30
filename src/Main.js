@@ -21,9 +21,10 @@ class Main extends React.Component {
         <CityRender
           cityData={this.props.cityData}
           weatherData={this.props.weatherData}
-          weatherReveal={this.props.weatherReveal}
+          // reveal={this.props.reveal}
+          // weatherReveal={this.props.weatherReveal}
           moviesData={this.props.moviesData}
-          moviesReveal={this.props.moviesReveal}
+          // moviesReveal={this.props.moviesReveal}
         />
       </main>
     )

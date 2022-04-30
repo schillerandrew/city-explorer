@@ -15,10 +15,10 @@ class CityRender extends React.Component {
           <Card.Body>
             <Card.Text><strong>latitude:</strong> {this.props.cityData.lat}</Card.Text>
             <Card.Text><strong>longitude:</strong> {this.props.cityData.lon}</Card.Text>
-            {this.props.weatherReveal ? (
+            {this.props.weatherData.length > 1 ? (
               <Weather
                 weatherData={this.props.weatherData}
-                weathearReveal={this.props.weatherReveal}
+                // reveal={this.props.reveal}
               />
             ) : null
             }
@@ -26,10 +26,10 @@ class CityRender extends React.Component {
               src={cityMap}
               alt={this.props.cityData.display_name}
             />
-            {this.props.moviesReveal ? (
+            {this.props.moviesData.length > 1 ? (
               <Movies
                 moviesData={this.props.moviesData}
-                moviesReveal={this.props.moviesReveal}
+                // moviesReveal={this.props.moviesReveal}
               />
             ) : null
             }
