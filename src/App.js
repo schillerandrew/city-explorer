@@ -3,6 +3,7 @@ import axios from 'axios';
 import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
+import Alert from 'react-bootstrap/Alert';
 
 
 class App extends React.Component {
@@ -15,7 +16,9 @@ class App extends React.Component {
       weatherData: [],
       moviesData: [],
       weatherReveal: false,
-      moviesReveal: false
+      moviesReveal: false,
+      error: false,
+      errorMessage: ''
     };
   };
 
@@ -28,14 +31,21 @@ class App extends React.Component {
 
   handleExploreClick = async (e) => {
     e.preventDefault();
-
-    let cityName = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
-    let cityDataFromAPI = await axios.get(cityName);
-    this.setState({
-      cityData: cityDataFromAPI.data[0]
-    });
-    this.handleWeather();
-    this.handleMovies();
+    try {
+      let cityName = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
+      let cityDataFromAPI = await axios.get(cityName);
+      this.setState({
+        cityData: cityDataFromAPI.data[0],
+        error: false
+      });
+      this.handleWeather();
+      this.handleMovies();
+    } catch (error) {
+      this.setState({
+        error: true,
+        errorMessage: `Error occured: ${error.response.status}`
+      })
+    }
   }
 
   handleWeather = async () => {
@@ -64,6 +74,17 @@ class App extends React.Component {
     return (
       <>
         <Header />
+        {
+          this.state.error
+            ?
+            <Alert
+            variant='warning'
+            >
+            {this.state.errorMessage}
+            </Alert>
+            :
+            null
+        }
         <Main
           handleExploreClick={this.handleExploreClick}
           handleCityInput={this.handleCityInput}
