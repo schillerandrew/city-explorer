@@ -15,8 +15,9 @@ class App extends React.Component {
       // cityMap: ''
       weatherData: [],
       moviesData: [],
-      weatherReveal: false,
-      moviesReveal: false,
+      // weatherReveal: false,
+      // moviesReveal: false,
+      // reveal: false,
       error: false,
       errorMessage: ''
     };
@@ -35,8 +36,7 @@ class App extends React.Component {
       let cityName = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`;
       let cityDataFromAPI = await axios.get(cityName);
       this.setState({
-        cityData: cityDataFromAPI.data[0],
-        error: false
+        cityData: cityDataFromAPI.data[0]
       });
       this.handleWeather();
       this.handleMovies();
@@ -53,7 +53,7 @@ class App extends React.Component {
     let weatherDataFromAPI = await axios.get(weatherURL);
     this.setState({
       weatherData: weatherDataFromAPI.data,
-      weatherReveal: true
+      // reveal: true
     });
   }
 
@@ -62,15 +62,17 @@ class App extends React.Component {
     let moviesDataFromAPI = await axios.get(moviesURL);
     this.setState({
       moviesData: moviesDataFromAPI.data,
-      moviesReveal: true
+      // reveal: true
+      // weatherReveal: true
     });
   };
 
   render() {
-    console.log(this.state.weatherData);
-    console.log(this.state.weatherReveal);
-    console.log(this.state.moviesReveal);
-    console.log(this.state.moviesData);
+    console.log('weather data', this.state.weatherData);
+    console.log(this.state.reveal);
+    // console.log('weather reveal?', this.state.weatherReveal);
+    console.log('movies data', this.state.moviesData);
+    // console.log('movies reveal?', this.state.moviesReveal);
     return (
       <>
         <Header />
@@ -90,7 +92,10 @@ class App extends React.Component {
           handleCityInput={this.handleCityInput}
           cityData={this.state.cityData}
           weatherData={this.state.weatherData}
-          reveal={this.state.reveal}
+          // reveal={this.state.reveal}
+          // weatherReveal={this.state.weatherReveal}
+          moviesData={this.state.moviesData}
+          // moviesReveal={this.state.moviesReaveal}
         />
         <Footer />
       </>
